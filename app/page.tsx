@@ -1,3 +1,4 @@
+import Tech from "./(home)/Tech";
 import Trending from "./(home)/Trending";
 
 export default function Home() {
@@ -5,10 +6,12 @@ export default function Home() {
     <main className="leading-7 px-10">
       {/* TRENDING */}
       <Trending />
+      <hr className="border-1" />
       <div className="md:flex gap-10 mb-5">
         {/* BODY 3/4 */}
         <div className="basis-3/4">
           {/* TECH */}
+          <Tech />
           {/* TRAVEL */}
           {/* OTHER */}
           {/* SUBSCRIBE BOTTOM hide<md */}
