@@ -1,4 +1,5 @@
 import Tech from "./(home)/Tech";
+import Traval from "./(home)/Traval";
 import Trending from "./(home)/Trending";
 
 export default function Home() {
@@ -12,7 +13,10 @@ export default function Home() {
         <div className="basis-3/4">
           {/* TECH */}
           <Tech />
+          <hr className="border-1" />
           {/* TRAVEL */}
+          <Traval />
+          <hr className="border-1" />
           {/* OTHER */}
           {/* SUBSCRIBE BOTTOM hide<md */}
           <div className="hidden md:block">subscribe</div>

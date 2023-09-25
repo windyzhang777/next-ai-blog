@@ -4,9 +4,9 @@ type TechProps = {};
 
 const Tech = ({}: TechProps) => {
   return (
-    <section>
+    <section className="my-8">
       {/* ICON + TEXT */}
-      <div className="flex items-center gap-3 mt-8 mb-5">
+      <div className="flex items-center gap-3">
         {/* ICON */}
         <h4 className="uppercase font-bold text-sm bg-accent-orange px-8 py-2">
           hot
