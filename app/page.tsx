@@ -1,3 +1,4 @@
+import Other from "./(home)/Other";
 import Tech from "./(home)/Tech";
 import Traval from "./(home)/Traval";
 import Trending from "./(home)/Trending";
@@ -18,6 +19,7 @@ export default function Home() {
           <Traval />
           <hr className="border-1" />
           {/* OTHER */}
+          <Other />
           {/* SUBSCRIBE BOTTOM hide<md */}
           <div className="hidden md:block">subscribe</div>
         </div>
