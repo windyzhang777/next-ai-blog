@@ -10,10 +10,10 @@ export default function Home() {
     <main className="leading-7 px-10">
       {/* TRENDING */}
       <Trending />
-      <hr className="border-1" />
       <div className="md:flex gap-10 mb-5">
         {/* BODY 3/4 */}
         <div className="basis-3/4">
+          <hr className="border-1" />
           {/* TECH */}
           <Tech />
           <hr className="border-1" />
@@ -23,7 +23,7 @@ export default function Home() {
           {/* OTHER */}
           <Other />
           {/* SUBSCRIBE BOTTOM hide<md */}
-          <Subscribe className="hidden md:flex" />
+          <Subscribe className="hidden md:flex px-20" />
         </div>
         {/* SUBSCRIBE SIDEBAR 1/4 */}
         <Sidebar className="basis-1/4"></Sidebar>

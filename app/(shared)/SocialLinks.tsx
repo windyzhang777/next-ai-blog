@@ -7,11 +7,12 @@ import Twitter from "/public/assets/social_twitter.png";
 
 type SocialLinksProps = {
   isDark?: boolean;
+  className?: string;
 };
 
-const SocialLinks = ({ isDark = false }: SocialLinksProps) => {
+const SocialLinks = ({ isDark = false, className }: SocialLinksProps) => {
   return (
-    <div className="flex justify-between items-center gap-7">
+    <div className={`${className} flex justify-between items-center gap-7`}>
       <a href="https://twitter.com" target="_blank" rel="noreferer">
         <Image
           className={`${isDark ? "brightness-0" : ""} hover:opacity-50`}
