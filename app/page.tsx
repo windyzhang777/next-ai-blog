@@ -3,6 +3,7 @@ import Subscribe from "./(home)/Subscribe";
 import Tech from "./(home)/Tech";
 import Traval from "./(home)/Traval";
 import Trending from "./(home)/Trending";
+import Sidebar from "./Sidebar";
 
 export default function Home() {
   return (
@@ -22,10 +23,10 @@ export default function Home() {
           {/* OTHER */}
           <Other />
           {/* SUBSCRIBE BOTTOM hide<md */}
-          <Subscribe />
+          <Subscribe className="hidden md:flex" />
         </div>
         {/* SUBSCRIBE SIDEBAR 1/4 */}
-        <div className="basis-1/4">sidebar</div>
+        <Sidebar className="basis-1/4"></Sidebar>
       </div>
     </main>
   );

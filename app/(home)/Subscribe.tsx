@@ -1,10 +1,12 @@
-import React, { FC, useCallback, useEffect, useMemo, useState } from "react";
+type SubscribeProps = {
+  className: string;
+};
 
-type SubscribeProps = {};
-
-const Subscribe = ({}: SubscribeProps) => {
+const Subscribe = ({ className }: SubscribeProps) => {
   return (
-    <section className="hidden md:flex bg-wh-100 flex-col gap-2 text-center px-20 py-10">
+    <section
+      className={`${className} bg-wh-100 flex-col gap-2 text-center px-20 py-10`}
+    >
       <h4 className="text-base font-semibold">Subscribe to our Newsletter</h4>
       <p className="text-wh-500">
         Enter email address to get top news and great deals
