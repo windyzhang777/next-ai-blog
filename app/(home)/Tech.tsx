@@ -1,8 +1,11 @@
+import { Post } from "@prisma/client";
 import Card from "../(shared)/Card";
 
-type TechProps = {};
+type TechProps = {
+  techPosts: Post[];
+};
 
-const Tech = ({}: TechProps) => {
+const Tech = ({ techPosts }: TechProps) => {
   return (
     <section className="my-8">
       {/* ICON + TEXT */}
@@ -17,21 +20,25 @@ const Tech = ({}: TechProps) => {
       {/* POSTS */}
       <div className="sm:grid gap-5 grid-cols-2 grid-rows-3 my-5">
         <Card
+          post={techPosts[0]}
           className="bg-wh-100 col-span-1 row-span-3"
           imageHeight="h-96"
           isLongForm
         />
         <Card
+          post={techPosts[1]}
           className="bg-wh-100 col-span-1 row-span-1"
           imageHeight="h-48"
           isSmallCard
         />
         <Card
+          post={techPosts[2]}
           className="bg-wh-100 col-span-1 row-span-1"
           imageHeight="h-48"
           isSmallCard
         />
         <Card
+          post={techPosts[3]}
           className="bg-wh-100 col-span-1 row-span-1"
           imageHeight="h-48"
           isSmallCard

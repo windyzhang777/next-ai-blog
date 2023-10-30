@@ -1,3 +1,4 @@
+import { Post } from "@prisma/client";
 import Link from "next/link";
 
 type CardProps = {
@@ -5,6 +6,7 @@ type CardProps = {
   imageHeight?: string;
   isLongForm?: boolean;
   isSmallCard?: boolean;
+  post: Post;
 };
 
 const Card = ({
@@ -12,11 +14,15 @@ const Card = ({
   imageHeight,
   isLongForm = false,
   isSmallCard = false,
+  post: { id, title, author, createdAt, image, snippet },
 }: CardProps) => {
   return (
     <div className={`${className} ${isSmallCard ? "flex" : ""} sm:mt-0 mt-5`}>
       {/* IMAGE */}
-      <Link className="basis-full hover:opacity-70" href={"/"}>
+      <Link
+        className="basis-full hover:opacity-70"
+        href={`${process.env.NEXT_PUBLIC_URL}/post/${id}`}
+      >
         <div
           className={`relative w-auto bg-wh-300 ${imageHeight} 
           ${isSmallCard ? "mr-3" : "mb-3"}`}
@@ -28,13 +34,13 @@ const Card = ({
       {/* POST */}
       <div className="basis-full">
         {/* TITLE */}
-        <Link href={"/"}>
+        <Link href={`${process.env.NEXT_PUBLIC_URL}/post/${id}`}>
           <h4
             className={`font-bold hover:text-accent-green 
           ${isSmallCard ? "text-base line-clamp-2" : "text-lg"}
           `}
           >
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            {title}
           </h4>
         </Link>
 
@@ -43,10 +49,10 @@ const Card = ({
           className={`my-2 ${isSmallCard ? "" : "flex items-center gap-3"} `}
         >
           {/* AUTHOR */}
-          <h5 className="text-xs font-semibold capitalize">jane doe</h5>
+          <h5 className="text-xs font-semibold capitalize">{author}</h5>
           {/* DATE */}
           <h6 className="text-xs text-wh-500 font-light">
-            {new Date().toLocaleString("en-US", {
+            {new Date(createdAt).toLocaleString("en-US", {
               year: "numeric",
               month: "long",
               day: "numeric",
@@ -60,10 +66,7 @@ const Card = ({
           ${isLongForm ? "line-clamp-5" : "line-clamp-3"}
           `}
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
-          obcaecati excepturi praesentium expedita deleniti voluptate quo,
-          assumenda sit quas qui temporibus doloribus modi amet ad veniam ipsa
-          adipisci culpa? Laudantium.
+          {snippet}
         </p>
       </div>
     </div>

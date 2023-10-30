@@ -1,8 +1,9 @@
+import { Post } from "@prisma/client";
 import Card from "../(shared)/Card";
 
-type TravalProps = {};
+type TravalProps = { travalPosts: Post[] };
 
-const Traval = ({}: TravalProps) => {
+const Traval = ({ travalPosts }: TravalProps) => {
   return (
     <section className="my-8">
       {/* ICON + TEXT */}
@@ -16,11 +17,16 @@ const Traval = ({}: TravalProps) => {
       </div>
       {/* FLEX */}
       <div className="sm:flex justify-between gap-5">
-        <Card className="bg-wh-100" imageHeight="h-80" />
-        <Card className="bg-wh-100" imageHeight="h-80" />
-        <Card className="bg-wh-100" imageHeight="h-80" />
+        <Card post={travalPosts[0]} className="bg-wh-100" imageHeight="h-80" />
+        <Card post={travalPosts[1]} className="bg-wh-100" imageHeight="h-80" />
+        <Card post={travalPosts[2]} className="bg-wh-100" imageHeight="h-80" />
       </div>
-      <Card className="bg-wh-100 !my-5" imageHeight="h-80" isSmallCard />
+      <Card
+        post={travalPosts[3]}
+        className="bg-wh-100 !my-5"
+        imageHeight="h-80"
+        isSmallCard
+      />
     </section>
   );
 };
