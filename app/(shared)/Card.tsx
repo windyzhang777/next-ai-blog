@@ -1,4 +1,5 @@
 import { Post } from "@prisma/client";
+import Image from "next/image";
 import Link from "next/link";
 
 type CardProps = {
@@ -27,7 +28,14 @@ const Card = ({
           className={`relative w-auto bg-wh-300 ${imageHeight} 
           ${isSmallCard ? "mr-3" : "mb-3"}`}
         >
-          image
+          <Image
+            alt="nav-image"
+            src={image}
+            fill
+            style={{ objectFit: "cover" }}
+            placeholder="blur"
+            sizes="(max-width: 480px) 100vw, (max-width: 768px) 75vw, (max-width: 1060px) 50vw, 33vw"
+          />
         </div>
       </Link>
 

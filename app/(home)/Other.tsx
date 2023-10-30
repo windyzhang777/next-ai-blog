@@ -12,27 +12,11 @@ const Other = ({ otherPosts }: OtherProps) => {
         other trending posts
       </h4>
       {/* GRID */}
-      <div className="grid gap-5 grid-cols-[repeat(auto-fill,minmax(200px,_1fr))]">
-        <Card
-          post={otherPosts[0]}
-          className="bg-wh-100 !mt-0"
-          imageHeight="h-60"
-        />
-        <Card
-          post={otherPosts[1]}
-          className="bg-wh-100 !mt-0"
-          imageHeight="h-60"
-        />
-        <Card
-          post={otherPosts[2]}
-          className="bg-wh-100 !mt-0"
-          imageHeight="h-60"
-        />
-        <Card
-          post={otherPosts[3]}
-          className="bg-wh-100 !mt-0"
-          imageHeight="h-60"
-        />
+      <div className="grid gap-5 grid-cols-[repeat(auto-fill,minmax(200px,_1fr))] [&>*]:!mt-0">
+        <Card post={otherPosts[0]} imageHeight="h-60" />
+        <Card post={otherPosts[1]} imageHeight="h-60" />
+        <Card post={otherPosts[2]} imageHeight="h-60" />
+        <Card post={otherPosts[3]} imageHeight="h-60" />
       </div>
     </section>
   );

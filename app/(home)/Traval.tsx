@@ -17,9 +17,9 @@ const Traval = ({ travalPosts }: TravalProps) => {
       </div>
       {/* FLEX */}
       <div className="sm:flex justify-between gap-5">
-        <Card post={travalPosts[0]} className="bg-wh-100" imageHeight="h-80" />
-        <Card post={travalPosts[1]} className="bg-wh-100" imageHeight="h-80" />
-        <Card post={travalPosts[2]} className="bg-wh-100" imageHeight="h-80" />
+        <Card post={travalPosts[0]} imageHeight="h-80" />
+        <Card post={travalPosts[1]} imageHeight="h-80" />
+        <Card post={travalPosts[2]} imageHeight="h-80" />
       </div>
       <Card
         post={travalPosts[3]}

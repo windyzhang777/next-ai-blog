@@ -1,4 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
+import Advert from "public/assets/ad-1.jpg";
 import SocialLinks from "./SocialLinks";
 
 interface NavbarProps {}
@@ -30,9 +32,15 @@ const Navbar = ({}: NavbarProps) => {
           </p>
         </div>
         {/* IMAGE */}
-        <div className="basis-full relative w-auto h-32 bg-wh-500">
-          {/* <Image alt="image" src={"/"} /> */}
-          image here
+        <div className="basis-full relative w-auto h-32">
+          <Image
+            alt="nav-image"
+            src={Advert}
+            fill
+            style={{ objectFit: "cover" }}
+            placeholder="blur"
+            sizes="(max-width: 480px) 100vw, (max-width: 768px) 75vw, (max-width: 1060px) 50vw, 33vw"
+          />
         </div>
       </div>
       <hr className="border-1 mx-10" />
