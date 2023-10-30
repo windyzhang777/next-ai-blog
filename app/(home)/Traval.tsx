@@ -23,7 +23,7 @@ const Traval = ({ travalPosts }: TravalProps) => {
       </div>
       <Card
         post={travalPosts[3]}
-        className="bg-wh-100 !my-5"
+        className="!my-5"
         imageHeight="h-80"
         isSmallCard
       />
