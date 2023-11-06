@@ -1,10 +1,10 @@
 import { Post } from "@prisma/client";
 import Other from "./(home)/Other";
-import Subscribe from "./(home)/Subscribe";
 import Tech from "./(home)/Tech";
 import Traval from "./(home)/Traval";
 import Trending from "./(home)/Trending";
-import Sidebar from "./Sidebar";
+import Sidebar from "./(shared)/Sidebar";
+import Subscribe from "./(shared)/Subscribe";
 import prisma from "./api/client";
 
 export const revalidate = 60;

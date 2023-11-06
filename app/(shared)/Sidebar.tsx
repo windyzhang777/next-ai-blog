@@ -1,5 +1,8 @@
-import Subscribe from "./(home)/Subscribe";
-import SocialLinks from "./(shared)/SocialLinks";
+import Image from "next/image";
+import AboutProfile from "../../public/assets/about-profile.jpg";
+import Advert from "../../public/assets/ad-2.png";
+import SocialLinks from "./SocialLinks";
+import Subscribe from "./Subscribe";
 
 type SidebarProps = {
   className: string;
@@ -13,11 +16,27 @@ const Sidebar = ({ className }: SidebarProps) => {
       </h4>
       <SocialLinks isDark className="p-5" />
       <Subscribe className="flex px-10" />
-      <div className="bg-wh-500 my-5">advert image</div>
+      <Image
+        className="my-5 hidden md:block w-full"
+        alt="advert-image"
+        src={Advert}
+        placeholder="blur"
+        width={500}
+        height={1000}
+      />
       <h4 className="font-bold bg-wh-900 text-wh-50 text-xs text-center py-3">
         About the Blog
       </h4>
-      <div className="bg-wh-500 my-5">profile image</div>
+      <div className="my-5 flex justify-center">
+        <Image
+          className="object-cover"
+          alt="about-profile-image"
+          src={AboutProfile}
+          placeholder="blur"
+          width={500}
+          height={250}
+        />
+      </div>
       <h4 className="font-bold text-center py-3">Jane Doe</h4>
       <p className="text-center text-sm text-wh-500">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non eveniet
