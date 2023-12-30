@@ -9,12 +9,12 @@ import prisma from "./api/client";
 
 export const revalidate = 60;
 
-const getPosts = async () => {
+const getPosts = async (): Promise<Post[]> => {
   const posts = await prisma?.post.findMany();
   const preparePosts = await Promise.all(
     posts.map(async (post) => ({
       ...post,
-      image: require(`../public${post.image}`),
+      image: require(`../public${post.image}`).default,
     }))
   );
   return preparePosts;
@@ -23,7 +23,7 @@ const getPosts = async () => {
 export default async function Home() {
   const posts = await getPosts();
 
-  const preparePost = () => {
+  const preparePosts = () => {
     const trendingPosts: Post[] = [];
     const techPosts: Post[] = [];
     const travalPosts: Post[] = [];
@@ -40,7 +40,7 @@ export default async function Home() {
     });
     return [trendingPosts, techPosts, travalPosts, otherPosts];
   };
-  const [trendingPosts, techPosts, travalPosts, otherPosts] = preparePost();
+  const [trendingPosts, techPosts, travalPosts, otherPosts] = preparePosts();
 
   return (
     <main className="leading-7 px-10">
@@ -62,7 +62,7 @@ export default async function Home() {
           <Subscribe className="hidden md:flex px-20" />
         </div>
         {/* SUBSCRIBE SIDEBAR 1/4 */}
-        <Sidebar className="basis-1/4"></Sidebar>
+        <Sidebar className="basis-1/4" />
       </div>
     </main>
   );
