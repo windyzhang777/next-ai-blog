@@ -1,7 +1,7 @@
 import Sidebar from "@/app/(shared)/Sidebar";
+import prisma from "@/app/api/client";
+import Content from "@/app/post/[id]/Content";
 import { Post } from "@prisma/client";
-import prisma from "../../api/client";
-import Content from "./Content";
 
 type PageProps = {
   params: { id: string };
@@ -24,12 +24,16 @@ const Post = async ({ params: { id } }: PageProps) => {
   const post = await getPost(id);
   // console.log(`post :`, post);
 
+  if (!post) {
+    return <div className="my-8">post {id} not found</div>;
+  }
+
   return (
     <main className="leading-7 px-10">
       <div className="md:flex gap-10 mb-5">
         {/* BODY 3/4 */}
         <div className="basis-3/4">
-          {post ? <Content post={post} /> : `post ${id} not found`}
+          <Content post={post} />
         </div>
         {/* SUBSCRIBE SIDEBAR 1/4 */}
         <Sidebar className="basis-1/4" />
